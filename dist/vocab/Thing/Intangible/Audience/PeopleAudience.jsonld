@@ -1,0 +1,210 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:requiredGender",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Audiences defined by a person's gender.",
+      "label": "requiredGender"
+    },
+    {
+      "id": "schema:audienceType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.).",
+      "label": "audienceType"
+    },
+    {
+      "id": "schema:requiredMinAge",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Integer"
+      ],
+      "comment": "Audiences defined by a person's minimum age.",
+      "label": "requiredMinAge"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:PeopleAudience",
+      "type": "rdfs:Class",
+      "comment": "A set of characteristics belonging to people, e.g. who compose an item's target audience.",
+      "subClassOf": "schema:Audience",
+      "usesVocabulary": "http://schema.org/"
+    },
+    {
+      "id": "schema:suggestedGender",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The gender of the person or audience.",
+      "label": "suggestedGender"
+    },
+    {
+      "id": "schema:healthCondition",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalCondition"
+      ],
+      "comment": "Expectations for health conditions of target audience.",
+      "label": "healthCondition"
+    },
+    {
+      "id": "schema:geographicArea",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:AdministrativeArea"
+      ],
+      "comment": "The geographic area associated with the audience.",
+      "label": "geographicArea"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:suggestedMaxAge",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "Maximal age recommended for viewing content.",
+      "label": "suggestedMaxAge"
+    },
+    {
+      "id": "schema:requiredMaxAge",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Integer"
+      ],
+      "comment": "Audiences defined by a person's maximum age.",
+      "label": "requiredMaxAge"
+    },
+    {
+      "id": "schema:suggestedMinAge",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "Minimal age recommended for viewing content.",
+      "label": "suggestedMinAge"
+    }
+  ]
+}

@@ -1,0 +1,760 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:gtin8",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.",
+      "label": "gtin8"
+    },
+    {
+      "id": "schema:numberOfDoors",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Number"
+      ],
+      "comment": "The number of doors.\nTypical unit code(s): C62",
+      "label": "numberOfDoors"
+    },
+    {
+      "id": "schema:isSimilarTo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Product"
+      ],
+      "comment": "A pointer to another, functionally similar product (or multiple products).",
+      "label": "isSimilarTo"
+    },
+    {
+      "id": "schema:steeringPosition",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:SteeringPositionValue"
+      ],
+      "comment": "The position of the steering wheel or similar device (mostly for cars).",
+      "label": "steeringPosition"
+    },
+    {
+      "id": "schema:numberOfPreviousOwners",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Number"
+      ],
+      "comment": "The number of owners of the vehicle, including the current one.\nTypical unit code(s): C62",
+      "label": "numberOfPreviousOwners"
+    },
+    {
+      "id": "schema:width",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Distance"
+      ],
+      "comment": "The width of the item.",
+      "label": "width"
+    },
+    {
+      "id": "schema:color",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The color of the product.",
+      "label": "color"
+    },
+    {
+      "id": "schema:wheelbase",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The distance between the centers of the front and rear wheels. \n    Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet",
+      "label": "wheelbase"
+    },
+    {
+      "id": "schema:vehicleEngine",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:EngineSpecification"
+      ],
+      "comment": "Information about the engine or engines of the vehicle.",
+      "label": "vehicleEngine"
+    },
+    {
+      "id": "schema:productID",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The product identifier, such as ISBN. For example: <meta itemprop='productID' content='isbn:123-456-789'/>.",
+      "label": "productID"
+    },
+    {
+      "id": "schema:isRelatedTo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Product"
+      ],
+      "comment": "A pointer to another, somehow related product (or multiple products).",
+      "label": "isRelatedTo"
+    },
+    {
+      "id": "schema:numberOfForwardGears",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Number"
+      ],
+      "comment": "The total number of forward gears available for the transmission system of the vehicle.\nTypical unit code(s): C62",
+      "label": "numberOfForwardGears"
+    },
+    {
+      "id": "schema:bodyType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:QualitativeValue",
+        "schema:Text"
+      ],
+      "comment": "Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).",
+      "label": "bodyType"
+    },
+    {
+      "id": "schema:seatingCapacity",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number",
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.\n    Typical unit code(s): C62 for persons ",
+      "label": "seatingCapacity"
+    },
+    {
+      "id": "schema:meetsEmissionStandard",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:URL",
+        "schema:QualitativeValue"
+      ],
+      "comment": "Indicates that the vehicle meets the respective emission standard.",
+      "label": "meetsEmissionStandard"
+    },
+    {
+      "id": "schema:cargoVolume",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.\nTypical unit code(s): LTR for liters, FTQ for cubic foot/feet\n\nNote: You can use minValue and maxValue to indicate ranges.",
+      "label": "cargoVolume"
+    },
+    {
+      "id": "schema:model",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ProductModel",
+        "schema:Text"
+      ],
+      "comment": "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties.",
+      "label": "model"
+    },
+    {
+      "id": "schema:tongueWeight",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).\n        Typical unit code(s): KGM for kilogram, LBR for pound\n\n    Note 1: You can indicate additional information in the name of the QuantitativeValue node.\n    Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference.\n    Note 3: Note that you can use minValue and maxValue to indicate ranges.",
+      "label": "tongueWeight"
+    },
+    {
+      "id": "schema:MotorizedBicycle",
+      "type": "rdfs:Property",
+      "comment": "A motorized bicycle is a bicycle with an attached motor used to power the vehicle, or to assist with pedaling.",
+      "subClassOf": "MotorizedBicycle"
+    },
+    {
+      "id": "http://auto.schema.org/MotorizedBicycle",
+      "usesVocabulary": "http://schema.org/"
+    },
+    {
+      "id": "schema:vehicleIdentificationNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.",
+      "label": "vehicleIdentificationNumber"
+    },
+    {
+      "id": "schema:vehicleInteriorType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.",
+      "label": "vehicleInteriorType"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:review",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Review"
+      ],
+      "comment": "A review of the item. Supersedes reviews.",
+      "label": "review"
+    },
+    {
+      "id": "schema:mileageFromOdometer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The total distance travelled by the particular vehicle since its initial production, as read from its odometer.\nTypical unit code(s): KMT for kilometers, SMI for statute miles",
+      "label": "mileageFromOdometer"
+    },
+    {
+      "id": "schema:dateVehicleFirstRegistered",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The date of the first registration of the vehicle with the respective public authorities.",
+      "label": "dateVehicleFirstRegistered"
+    },
+    {
+      "id": "schema:vehicleModelDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+      "label": "vehicleModelDate"
+    },
+    {
+      "id": "schema:depth",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Distance"
+      ],
+      "comment": "The depth of the item.",
+      "label": "depth"
+    },
+    {
+      "id": "schema:gtin14",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.",
+      "label": "gtin14"
+    },
+    {
+      "id": "schema:gtin13",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See GS1 GTIN Summary for more details.",
+      "label": "gtin13"
+    },
+    {
+      "id": "schema:gtin12",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.",
+      "label": "gtin12"
+    },
+    {
+      "id": "schema:itemCondition",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OfferItemCondition"
+      ],
+      "comment": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
+      "label": "itemCondition"
+    },
+    {
+      "id": "schema:brand",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Brand"
+      ],
+      "comment": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "label": "brand"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:numberOfAxles",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Number"
+      ],
+      "comment": "The number of axles.\nTypical unit code(s): C62",
+      "label": "numberOfAxles"
+    },
+    {
+      "id": "schema:purchaseDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The date the item e.g. vehicle was purchased by the current owner.",
+      "label": "purchaseDate"
+    },
+    {
+      "id": "schema:audience",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Audience"
+      ],
+      "comment": "An intended audience, i.e. a group for whom something was created. Supersedes serviceAudience.",
+      "label": "audience"
+    },
+    {
+      "id": "schema:knownVehicleDamages",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A textual description of known damages, both repaired and unrepaired.",
+      "label": "knownVehicleDamages"
+    },
+    {
+      "id": "schema:numberOfAirbags",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:Number"
+      ],
+      "comment": "The number or type of airbags in the vehicle.",
+      "label": "numberOfAirbags"
+    },
+    {
+      "id": "schema:fuelType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:URL",
+        "schema:QualitativeValue"
+      ],
+      "comment": "The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.",
+      "label": "fuelType"
+    },
+    {
+      "id": "schema:releaseDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The release date of a product or product model. This can be used to distinguish the exact variant of a product.",
+      "label": "releaseDate"
+    },
+    {
+      "id": "schema:fuelConsumption",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).\nNote 1: There are unfortunately no standard unit codes for liters per 100 km.\nUse unitText to indicate the unit of measurement, e.g. L/100 km.\nNote 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.\nNote 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use valueReference to link the value for the fuel consumption to another value.",
+      "label": "fuelConsumption"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:additionalProperty",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PropertyValue"
+      ],
+      "comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. \n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+      "label": "additionalProperty"
+    },
+    {
+      "id": "schema:emissionsCO2",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "The CO2 emissions in g/km. The property uses a number instead of a QuantitativeValue, since g/km is the dominant unit of measurement, and there is no UNCEFACT Common Code for g/km.",
+      "label": "emissionsCO2"
+    },
+    {
+      "id": "schema:aggregateRating",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:AggregateRating"
+      ],
+      "comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "label": "aggregateRating"
+    },
+    {
+      "id": "schema:vehicleTransmission",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue",
+        "schema:URL",
+        "schema:Text"
+      ],
+      "comment": "The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) (\"gearbox\" for cars).",
+      "label": "vehicleTransmission"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:isAccessoryOrSparePartFor",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Product"
+      ],
+      "comment": "A pointer to another product (or multiple products) for which this product is an accessory or spare part.",
+      "label": "isAccessoryOrSparePartFor"
+    },
+    {
+      "id": "schema:fuelCapacity",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.\n    Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles)\n    ",
+      "label": "fuelCapacity"
+    },
+    {
+      "id": "schema:isConsumableFor",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Product"
+      ],
+      "comment": "A pointer to another product (or multiple products) for which this product is a consumable.",
+      "label": "isConsumableFor"
+    },
+    {
+      "id": "schema:award",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An award won by or for this item. Supersedes awards.",
+      "label": "award"
+    },
+    {
+      "id": "schema:productionDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The date of production of the item, e.g. vehicle.",
+      "label": "productionDate"
+    },
+    {
+      "id": "schema:offers",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Offer"
+      ],
+      "comment": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "label": "offers"
+    },
+    {
+      "id": "schema:mpn",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
+      "label": "mpn"
+    },
+    {
+      "id": "schema:vehicleInteriorColor",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The color or color combination of the interior of the vehicle.",
+      "label": "vehicleInteriorColor"
+    },
+    {
+      "id": "schema:vehicleSeatingCapacity",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Number"
+      ],
+      "comment": "The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.\nTypical unit code(s): C62 for persons.",
+      "label": "vehicleSeatingCapacity"
+    },
+    {
+      "id": "schema:manufacturer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "The manufacturer of the product.",
+      "label": "manufacturer"
+    },
+    {
+      "id": "schema:category",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PhysicalActivityCategory",
+        "schema:Thing",
+        "schema:Text"
+      ],
+      "comment": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "label": "category"
+    },
+    {
+      "id": "schema:specialUsage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:CarUsageType"
+      ],
+      "comment": "Indicates whether the object has been used for special purposes, like vehicles that have been used for commercial rental, driving school, or as a taxi. The legislation in some countries may require this information to be revealed when offering the item for sale.\n    ",
+      "label": "specialUsage"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:weight",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The weight of the product or person.",
+      "label": "weight"
+    },
+    {
+      "id": "schema:modelDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+      "label": "modelDate"
+    },
+    {
+      "id": "schema:trailerWeight",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The permitted weight of a trailer attached to the vehicle.\n    Typical unit code(s): KGM for kilogram, LBR for pound\n\n    Note 1: You can indicate additional information in the name of the QuantitativeValue node.\n    Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference.\n    Note 3: Note that you can use minValue and maxValue to indicate ranges.",
+      "label": "trailerWeight"
+    },
+    {
+      "id": "schema:vehicleConfiguration",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.",
+      "label": "vehicleConfiguration"
+    },
+    {
+      "id": "schema:accelerationTime",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The time needed to accelerate the vehicle from a given start velocity to a given target velocity.\n    Typical unit code(s): SEC for seconds\n\n    Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use \"SEC\" for seconds and indicate the velocities in the name of the QuantitativeValue, or use valueReference with a QuantitativeValue of 0..60 mph or 0..100 km/h to specify the reference speeds.",
+      "label": "accelerationTime"
+    },
+    {
+      "id": "schema:speed",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by maxValue) should be the maximum speed achievable under regular conditions.\n    Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot\n\n    Note 1: Use minValue and maxValue to indicate the range. Typically, the minimal value is zero.\n    Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the valueReference property.",
+      "label": "speed"
+    },
+    {
+      "id": "schema:fuelEfficiency",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).\nNote 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter.\nUse unitText to indicate the unit of measurement, e.g. mpg or km/L.\nNote 2: There are two ways of indicating the fuel consumption, fuelConsumption (e.g. 8 liters per 100 km) and fuelEfficiency (e.g. 30 miles per gallon). They are reciprocal.\nNote 3: Often, the absolute value is useful only when related to driving speed (\"at 80 km/h\") or usage pattern (\"city traffic\"). You can use valueReference to link the value for the fuel economy to another value.",
+      "label": "fuelEfficiency"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:CreativeWork"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:sku",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
+      "label": "sku"
+    },
+    {
+      "id": "schema:logo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:ImageObject"
+      ],
+      "comment": "An associated logo.",
+      "label": "logo"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:height",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue",
+        "schema:Distance"
+      ],
+      "comment": "The height of the item.",
+      "label": "height"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:payload",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle. \n    Typical unit code(s): KGM for kilogram, LBR for pound\n\n    Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of weight and payload.\n    Note 2: You can indicate additional information in the name of the QuantitativeValue node.\n    Note 3: You may also link to a QualitativeValue node that provides additional information using valueReference.\n    Note 4: Note that you can use minValue and maxValue to indicate ranges.",
+      "label": "payload"
+    },
+    {
+      "id": "schema:driveWheelConfiguration",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:DriveWheelConfigurationValue",
+        "schema:Text"
+      ],
+      "comment": "The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.",
+      "label": "driveWheelConfiguration"
+    },
+    {
+      "id": "schema:weightTotal",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.\n    Typical unit code(s): KGM for kilogram, LBR for pound\n\n    Note 1: You can indicate additional information in the name of the QuantitativeValue node.\n    Note 2: You may also link to a QualitativeValue node that provides additional information using valueReference.\n    Note 3: Note that you can use minValue and maxValue to indicate ranges.",
+      "label": "weightTotal"
+    }
+  ]
+}

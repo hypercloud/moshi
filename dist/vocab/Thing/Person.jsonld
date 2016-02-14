@@ -1,0 +1,572 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:honorificPrefix",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.",
+      "label": "honorificPrefix"
+    },
+    {
+      "id": "schema:duns",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "label": "duns"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:sibling",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "A sibling of the person. Supersedes siblings.",
+      "label": "sibling"
+    },
+    {
+      "id": "schema:jobTitle",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The job title of the person (for example, Financial Manager).",
+      "label": "jobTitle"
+    },
+    {
+      "id": "schema:isicV4",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "label": "isicV4"
+    },
+    {
+      "id": "schema:givenName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.",
+      "label": "givenName"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:birthDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "Date of birth.",
+      "label": "birthDate"
+    },
+    {
+      "id": "schema:Person",
+      "type": "rdfs:Class",
+      "comment": "A person (alive, dead, undead, or fictional).",
+      "subClassOf": "schema:Thing",
+      "http://www.w3.org/2002/07/owl#equivalentClass": {
+        "id": "http://xmlns.com/foaf/0.1/Person"
+      },
+      "usesVocabulary": "http://schema.org/"
+    },
+    {
+      "id": "schema:award",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An award won by or for this item. Supersedes awards.",
+      "label": "award"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:knows",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "The most generic bi-directional social/work relation.",
+      "label": "knows"
+    },
+    {
+      "id": "schema:seeks",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Demand"
+      ],
+      "comment": "A pointer to products or services sought by the organization or person (demand).",
+      "label": "seeks"
+    },
+    {
+      "id": "schema:performerIn",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Event"
+      ],
+      "comment": "Event that this person is a performer or participant in.",
+      "label": "performerIn"
+    },
+    {
+      "id": "schema:memberOf",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:ProgramMembership"
+      ],
+      "comment": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+      "label": "memberOf"
+    },
+    {
+      "id": "schema:additionalName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An additional name for a Person, can be used for a middle name.",
+      "label": "additionalName"
+    },
+    {
+      "id": "schema:relatedTo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "The most generic familial relation.",
+      "label": "relatedTo"
+    },
+    {
+      "id": "schema:birthPlace",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The place where the person was born.",
+      "label": "birthPlace"
+    },
+    {
+      "id": "schema:spouse",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "The person's spouse.",
+      "label": "spouse"
+    },
+    {
+      "id": "schema:telephone",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The telephone number.",
+      "label": "telephone"
+    },
+    {
+      "id": "schema:owns",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OwnershipInfo",
+        "schema:Product"
+      ],
+      "comment": "Products owned by the organization or person.",
+      "label": "owns"
+    },
+    {
+      "id": "schema:nationality",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Country"
+      ],
+      "comment": "Nationality of the person.",
+      "label": "nationality"
+    },
+    {
+      "id": "schema:brand",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Brand"
+      ],
+      "comment": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "label": "brand"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:hasPOS",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "Points-of-Sales operated by the organization or person.",
+      "label": "hasPOS"
+    },
+    {
+      "id": "schema:workLocation",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place",
+        "schema:ContactPoint"
+      ],
+      "comment": "A contact location for a person's place of work.",
+      "label": "workLocation"
+    },
+    {
+      "id": "schema:email",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Email address.",
+      "label": "email"
+    },
+    {
+      "id": "schema:faxNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The fax number.",
+      "label": "faxNumber"
+    },
+    {
+      "id": "schema:naics",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "label": "naics"
+    },
+    {
+      "id": "schema:children",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "A child of the person.",
+      "label": "children"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:affiliation",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+      "label": "affiliation"
+    },
+    {
+      "id": "schema:taxID",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "label": "taxID"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:globalLocationNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "label": "globalLocationNumber"
+    },
+    {
+      "id": "schema:deathPlace",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The place where the person died.",
+      "label": "deathPlace"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:netWorth",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PriceSpecification"
+      ],
+      "comment": "The total financial value of the person as calculated by subtracting assets from liabilities.",
+      "label": "netWorth"
+    },
+    {
+      "id": "schema:colleague",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "A colleague of the person. Supersedes colleagues.",
+      "label": "colleague"
+    },
+    {
+      "id": "schema:hasOfferCatalog",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OfferCatalog"
+      ],
+      "comment": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "label": "hasOfferCatalog"
+    },
+    {
+      "id": "schema:follows",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "The most generic uni-directional social relation.",
+      "label": "follows"
+    },
+    {
+      "id": "schema:parent",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "A parent of this person. Supersedes parents.",
+      "label": "parent"
+    },
+    {
+      "id": "schema:address",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PostalAddress",
+        "schema:Text"
+      ],
+      "comment": "Physical address of the item.",
+      "label": "address"
+    },
+    {
+      "id": "schema:vatID",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Value-added Tax ID of the organization or person.",
+      "label": "vatID"
+    },
+    {
+      "id": "schema:weight",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The weight of the product or person.",
+      "label": "weight"
+    },
+    {
+      "id": "schema:familyName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.",
+      "label": "familyName"
+    },
+    {
+      "id": "schema:alumniOf",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:EducationalOrganization",
+        "schema:Organization"
+      ],
+      "comment": "An organization that the person is an alumni of. Inverse property: alumni.",
+      "label": "alumniOf"
+    },
+    {
+      "id": "schema:homeLocation",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ContactPoint",
+        "schema:Place"
+      ],
+      "comment": "A contact location for a person's residence.",
+      "label": "homeLocation"
+    },
+    {
+      "id": "schema:deathDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "Date of death.",
+      "label": "deathDate"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:gender",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Gender of the person.",
+      "label": "gender"
+    },
+    {
+      "id": "schema:worksFor",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "Organizations that the person works for.",
+      "label": "worksFor"
+    },
+    {
+      "id": "schema:contactPoint",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ContactPoint"
+      ],
+      "comment": "A contact point for a person or organization. Supersedes contactPoints.",
+      "label": "contactPoint"
+    },
+    {
+      "id": "schema:height",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Distance",
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The height of the item.",
+      "label": "height"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:makesOffer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Offer"
+      ],
+      "comment": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
+      "label": "makesOffer"
+    },
+    {
+      "id": "schema:honorificSuffix",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An honorific suffix preceding a Person's name such as M.D. /PhD/MSCSW.",
+      "label": "honorificSuffix"
+    }
+  ]
+}

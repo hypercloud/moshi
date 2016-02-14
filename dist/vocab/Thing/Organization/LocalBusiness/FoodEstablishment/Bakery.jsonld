@@ -1,0 +1,614 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:duns",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Dun & Bradstreet DUNS number for identifying an organization or business person.",
+      "label": "duns"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:servesCuisine",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The cuisine of the restaurant.",
+      "label": "servesCuisine"
+    },
+    {
+      "id": "schema:isicV4",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "label": "isicV4"
+    },
+    {
+      "id": "schema:foundingLocation",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The place where the Organization was founded.",
+      "label": "foundingLocation"
+    },
+    {
+      "id": "schema:department",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.",
+      "label": "department"
+    },
+    {
+      "id": "schema:numberOfEmployees",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QuantitativeValue"
+      ],
+      "comment": "The number of employees in an organization e.g. business.",
+      "label": "numberOfEmployees"
+    },
+    {
+      "id": "schema:hasMap",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:Map"
+      ],
+      "comment": "A URL to a map of the place. Supersedes map, maps.",
+      "label": "hasMap"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:acceptsReservations",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:Boolean",
+        "schema:URL"
+      ],
+      "comment": "Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, a URL at which reservations can be made or (for backwards compatibility) the strings Yes or No.",
+      "label": "acceptsReservations"
+    },
+    {
+      "id": "schema:seeks",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Demand"
+      ],
+      "comment": "A pointer to products or services sought by the organization or person (demand).",
+      "label": "seeks"
+    },
+    {
+      "id": "schema:containedInPlace",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The basic containment relation between a place and one that contains it. Supersedes containedIn. Inverse property: containsPlace.",
+      "label": "containedInPlace"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:review",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Review"
+      ],
+      "comment": "A review of the item. Supersedes reviews.",
+      "label": "review"
+    },
+    {
+      "id": "schema:vatID",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Value-added Tax ID of the organization or person.",
+      "label": "vatID"
+    },
+    {
+      "id": "schema:email",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Email address.",
+      "label": "email"
+    },
+    {
+      "id": "schema:telephone",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The telephone number.",
+      "label": "telephone"
+    },
+    {
+      "id": "schema:founder",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "A person who founded this organization. Supersedes founders.",
+      "label": "founder"
+    },
+    {
+      "id": "schema:owns",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OwnershipInfo",
+        "schema:Product"
+      ],
+      "comment": "Products owned by the organization or person.",
+      "label": "owns"
+    },
+    {
+      "id": "schema:employee",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "Someone working for this organization. Supersedes employees.",
+      "label": "employee"
+    },
+    {
+      "id": "schema:brand",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Brand"
+      ],
+      "comment": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "label": "brand"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:hasPOS",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "Points-of-Sales operated by the organization or person.",
+      "label": "hasPOS"
+    },
+    {
+      "id": "schema:containsPlace",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The basic containment relation between a place and another that it contains. Inverse property: containsPlace.",
+      "label": "containsPlace"
+    },
+    {
+      "id": "schema:areaServed",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:GeoShape",
+        "schema:Text",
+        "schema:Place",
+        "schema:AdministrativeArea"
+      ],
+      "comment": "The geographic area where a service or offered item is provided. Supersedes serviceArea.",
+      "label": "areaServed"
+    },
+    {
+      "id": "schema:memberOf",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:ProgramMembership"
+      ],
+      "comment": "An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.",
+      "label": "memberOf"
+    },
+    {
+      "id": "schema:currenciesAccepted",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The currency accepted (in ISO 4217 currency format).",
+      "label": "currenciesAccepted"
+    },
+    {
+      "id": "schema:event",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Event"
+      ],
+      "comment": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
+      "label": "event"
+    },
+    {
+      "id": "schema:Bakery",
+      "type": "rdfs:Class",
+      "comment": "A bakery.",
+      "usesVocabulary": "http://schema.org/",
+      "subClassOf": "Bakery"
+    },
+    {
+      "id": "schema:naics",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The North American Industry Classification System (NAICS) code for a particular organization or business person.",
+      "label": "naics"
+    },
+    {
+      "id": "schema:alumni",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person"
+      ],
+      "comment": "Alumni of an organization. Inverse property: alumniOf.",
+      "label": "alumni"
+    },
+    {
+      "id": "schema:openingHours",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.- Days are specified using the following two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su.- Times are specified using 24:00 time. For example, 3pm is specified as 15:00. - Here is an example: <time itemprop=\"openingHours\" datetime=\"Tu,Th 16:00-20:00\">Tuesdays and Thursdays 4-8pm</time>. - If a business is open 7 days a week, then it can be specified as <time itemprop=\"openingHours\" datetime=\"Mo-Su\">Monday through Sunday, all day</time>.",
+      "label": "openingHours"
+    },
+    {
+      "id": "schema:additionalProperty",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PropertyValue"
+      ],
+      "comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. \n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+      "label": "additionalProperty"
+    },
+    {
+      "id": "schema:member",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person",
+        "schema:Organization"
+      ],
+      "comment": "A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes musicGroupMember, members. Inverse property: memberOf.",
+      "label": "member"
+    },
+    {
+      "id": "schema:aggregateRating",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:AggregateRating"
+      ],
+      "comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "label": "aggregateRating"
+    },
+    {
+      "id": "schema:dissolutionDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The date that this organization was dissolved.",
+      "label": "dissolutionDate"
+    },
+    {
+      "id": "schema:menu",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:Text"
+      ],
+      "comment": "Either the actual menu or a URL of the menu.",
+      "label": "menu"
+    },
+    {
+      "id": "schema:openingHoursSpecification",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OpeningHoursSpecification"
+      ],
+      "comment": "The opening hours of a certain place.",
+      "label": "openingHoursSpecification"
+    },
+    {
+      "id": "schema:parentOrganization",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "The larger organization that this organization is a branch of, if any. Supersedes branchOf. Inverse property: subOrganization.",
+      "label": "parentOrganization"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:globalLocationNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "label": "globalLocationNumber"
+    },
+    {
+      "id": "schema:location",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place",
+        "schema:Text",
+        "schema:PostalAddress"
+      ],
+      "comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "label": "location"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:subOrganization",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property. Inverse property: parentOrganization.",
+      "label": "subOrganization"
+    },
+    {
+      "id": "schema:foundingDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The date that this organization was founded.",
+      "label": "foundingDate"
+    },
+    {
+      "id": "schema:legalName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The official name of the organization, e.g. the registered company name.",
+      "label": "legalName"
+    },
+    {
+      "id": "schema:hasOfferCatalog",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OfferCatalog"
+      ],
+      "comment": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "label": "hasOfferCatalog"
+    },
+    {
+      "id": "schema:priceRange",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The price range of the business, for example $$$.",
+      "label": "priceRange"
+    },
+    {
+      "id": "schema:address",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:PostalAddress"
+      ],
+      "comment": "Physical address of the item.",
+      "label": "address"
+    },
+    {
+      "id": "schema:faxNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The fax number.",
+      "label": "faxNumber"
+    },
+    {
+      "id": "schema:paymentAccepted",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Cash, credit card, etc.",
+      "label": "paymentAccepted"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:taxID",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "label": "taxID"
+    },
+    {
+      "id": "schema:geo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:GeoCoordinates",
+        "schema:GeoShape"
+      ],
+      "comment": "The geo coordinates of the place.",
+      "label": "geo"
+    },
+    {
+      "id": "schema:branchCode",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.\n      ",
+      "label": "branchCode"
+    },
+    {
+      "id": "schema:makesOffer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Offer"
+      ],
+      "comment": "A pointer to products or services offered by the organization or person. Inverse property: offeredBy.",
+      "label": "makesOffer"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:photo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Photograph",
+        "schema:ImageObject"
+      ],
+      "comment": "A photograph of this place. Supersedes photos.",
+      "label": "photo"
+    },
+    {
+      "id": "schema:logo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:ImageObject"
+      ],
+      "comment": "An associated logo.",
+      "label": "logo"
+    },
+    {
+      "id": "schema:contactPoint",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ContactPoint"
+      ],
+      "comment": "A contact point for a person or organization. Supersedes contactPoints.",
+      "label": "contactPoint"
+    },
+    {
+      "id": "schema:award",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An award won by or for this item. Supersedes awards.",
+      "label": "award"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    }
+  ]
+}

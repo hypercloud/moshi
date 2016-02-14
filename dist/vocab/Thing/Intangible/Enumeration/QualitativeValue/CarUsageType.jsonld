@@ -1,0 +1,216 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:lesserOrEqual",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue"
+      ],
+      "comment": "This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.",
+      "label": "lesserOrEqual"
+    },
+    {
+      "id": "schema:supersededBy",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Class",
+        "schema:Enumeration",
+        "schema:Property"
+      ],
+      "comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "label": "supersededBy"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:valueReference",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PropertyValue",
+        "schema:Enumeration",
+        "schema:QualitativeValue",
+        "schema:QuantitativeValue",
+        "schema:StructuredValue"
+      ],
+      "comment": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+      "label": "valueReference"
+    },
+    {
+      "id": "schema:nonEqual",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue"
+      ],
+      "comment": "This ordering relation for qualitative values indicates that the subject is not equal to the object.",
+      "label": "nonEqual"
+    },
+    {
+      "id": "schema:equal",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue"
+      ],
+      "comment": "This ordering relation for qualitative values indicates that the subject is equal to the object.",
+      "label": "equal"
+    },
+    {
+      "id": "schema:greaterOrEqual",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue"
+      ],
+      "comment": "This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.",
+      "label": "greaterOrEqual"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:greater",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue"
+      ],
+      "comment": "This ordering relation for qualitative values indicates that the subject is greater than the object.",
+      "label": "greater"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:ImageObject"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:CarUsageType",
+      "type": "rdfs:Class",
+      "comment": "A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.",
+      "usesVocabulary": "http://schema.org/",
+      "subClassOf": "CarUsageType"
+    },
+    {
+      "id": "schema:lesser",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:QualitativeValue"
+      ],
+      "comment": "This ordering relation for qualitative values indicates that the subject is lesser than the object.",
+      "label": "lesser"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:additionalProperty",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PropertyValue"
+      ],
+      "comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. \n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+      "label": "additionalProperty"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    }
+  ]
+}

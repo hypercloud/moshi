@@ -1,0 +1,232 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:object",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Thing"
+      ],
+      "comment": "The object upon the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn't). e.g. John read *a book*.",
+      "label": "object"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:participant",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Person"
+      ],
+      "comment": "Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.",
+      "label": "participant"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:error",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Thing"
+      ],
+      "comment": "For failed actions, more information on the cause of the failure.",
+      "label": "error"
+    },
+    {
+      "id": "schema:DiscoverAction",
+      "type": "rdfs:Class",
+      "comment": "The act of discovering/finding an object.",
+      "usesVocabulary": "http://schema.org/",
+      "subClassOf": "DiscoverAction"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:endTime",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:DateTime"
+      ],
+      "comment": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to *December*.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "label": "endTime"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:startTime",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:DateTime"
+      ],
+      "comment": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from *January* to December.\n\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "label": "startTime"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:result",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Thing"
+      ],
+      "comment": "The result produced in the action. e.g. John wrote *a book*.",
+      "label": "result"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:ImageObject"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:target",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:EntryPoint"
+      ],
+      "comment": "Indicates a target EntryPoint for an Action.",
+      "label": "target"
+    },
+    {
+      "id": "schema:actionStatus",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ActionStatusType"
+      ],
+      "comment": "Indicates the current disposition of the Action.",
+      "label": "actionStatus"
+    },
+    {
+      "id": "schema:instrument",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Thing"
+      ],
+      "comment": "The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.",
+      "label": "instrument"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:location",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place",
+        "schema:PostalAddress",
+        "schema:Text"
+      ],
+      "comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "label": "location"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:agent",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person",
+        "schema:Organization"
+      ],
+      "comment": "The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.",
+      "label": "agent"
+    }
+  ]
+}

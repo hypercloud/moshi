@@ -1,0 +1,296 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:isicV4",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.",
+      "label": "isicV4"
+    },
+    {
+      "id": "schema:photo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:Photograph"
+      ],
+      "comment": "A photograph of this place. Supersedes photos.",
+      "label": "photo"
+    },
+    {
+      "id": "schema:hasMap",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:Map"
+      ],
+      "comment": "A URL to a map of the place. Supersedes map, maps.",
+      "label": "hasMap"
+    },
+    {
+      "id": "schema:containedInPlace",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The basic containment relation between a place and one that contains it. Supersedes containedIn. Inverse property: containsPlace.",
+      "label": "containedInPlace"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:review",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Review"
+      ],
+      "comment": "A review of the item. Supersedes reviews.",
+      "label": "review"
+    },
+    {
+      "id": "schema:telephone",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The telephone number.",
+      "label": "telephone"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:containsPlace",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place"
+      ],
+      "comment": "The basic containment relation between a place and another that it contains. Inverse property: containsPlace.",
+      "label": "containsPlace"
+    },
+    {
+      "id": "schema:branchCode",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.\n For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.\n      ",
+      "label": "branchCode"
+    },
+    {
+      "id": "schema:openingHours",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.- Days are specified using the following two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su.- Times are specified using 24:00 time. For example, 3pm is specified as 15:00. - Here is an example: <time itemprop=\"openingHours\" datetime=\"Tu,Th 16:00-20:00\">Tuesdays and Thursdays 4-8pm</time>. - If a business is open 7 days a week, then it can be specified as <time itemprop=\"openingHours\" datetime=\"Mo-Su\">Monday through Sunday, all day</time>.",
+      "label": "openingHours"
+    },
+    {
+      "id": "schema:additionalProperty",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PropertyValue"
+      ],
+      "comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. \n\nNote: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.\n",
+      "label": "additionalProperty"
+    },
+    {
+      "id": "schema:aggregateRating",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:AggregateRating"
+      ],
+      "comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "label": "aggregateRating"
+    },
+    {
+      "id": "schema:event",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Event"
+      ],
+      "comment": "Upcoming or past event associated with this place, organization, or action. Supersedes events.",
+      "label": "event"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:globalLocationNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "label": "globalLocationNumber"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:Embassy",
+      "type": "rdfs:Class",
+      "comment": "An embassy.",
+      "usesVocabulary": "http://schema.org/",
+      "subClassOf": "Embassy"
+    },
+    {
+      "id": "schema:address",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PostalAddress",
+        "schema:Text"
+      ],
+      "comment": "Physical address of the item.",
+      "label": "address"
+    },
+    {
+      "id": "schema:faxNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The fax number.",
+      "label": "faxNumber"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:geo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:GeoCoordinates",
+        "schema:GeoShape"
+      ],
+      "comment": "The geo coordinates of the place.",
+      "label": "geo"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:logo",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An associated logo.",
+      "label": "logo"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:openingHoursSpecification",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OpeningHoursSpecification"
+      ],
+      "comment": "The opening hours of a certain place.",
+      "label": "openingHoursSpecification"
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:valueMinLength",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "Specifies the minimum allowed range for number of characters in a literal value.",
+      "label": "valueMinLength"
+    },
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:valuePattern",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Specifies a regular expression for testing literal values according to the HTML spec.",
+      "label": "valuePattern"
+    },
+    {
+      "id": "schema:valueMaxLength",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "Specifies the allowed range for number of characters in a literal value.",
+      "label": "valueMaxLength"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:valueRequired",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Boolean"
+      ],
+      "comment": "Whether the property must be filled in to complete the action.  Default is false.",
+      "label": "valueRequired"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:minValue",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "The lower value of some characteristic or property.",
+      "label": "minValue"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:PropertyValueSpecification",
+      "type": "rdfs:Class",
+      "comment": "A Property value specification.",
+      "subClassOf": "schema:Intangible",
+      "usesVocabulary": "http://schema.org/"
+    },
+    {
+      "id": "schema:readonlyValue",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Boolean"
+      ],
+      "comment": "Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a \"hidden\" input in an HTML form.",
+      "label": "readonlyValue"
+    },
+    {
+      "id": "schema:maxValue",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "The upper value of some characteristic or property.",
+      "label": "maxValue"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:multipleValues",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Boolean"
+      ],
+      "comment": "Whether multiple values are allowed for the property.  Default is false.",
+      "label": "multipleValues"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:stepValue",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Number"
+      ],
+      "comment": "The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.",
+      "label": "stepValue"
+    },
+    {
+      "id": "schema:valueName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.",
+      "label": "valueName"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:CreativeWork"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:defaultValue",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Thing",
+        "schema:Text"
+      ],
+      "comment": "The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.",
+      "label": "defaultValue"
+    }
+  ]
+}

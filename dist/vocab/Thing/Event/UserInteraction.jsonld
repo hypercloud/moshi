@@ -1,0 +1,315 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:attendee",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Person"
+      ],
+      "comment": "A person or organization attending the event. Supersedes attendees.",
+      "label": "attendee"
+    },
+    {
+      "id": "schema:endDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The end date and time of the item (in ISO 8601 date format).",
+      "label": "endDate"
+    },
+    {
+      "id": "schema:eventStatus",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:EventStatusType"
+      ],
+      "comment": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+      "label": "eventStatus"
+    },
+    {
+      "id": "schema:workFeatured",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork"
+      ],
+      "comment": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
+      "label": "workFeatured"
+    },
+    {
+      "id": "schema:subEvent",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Event"
+      ],
+      "comment": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. Supersedes subEvents.",
+      "label": "subEvent"
+    },
+    {
+      "id": "schema:UserInteraction",
+      "type": "rdfs:Class",
+      "comment": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use\n          Action-based vocabulary, alongside types such as Comment.\n      ",
+      "usesVocabulary": "http://schema.org/",
+      "subClassOf": "UserInteraction"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:review",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Review"
+      ],
+      "comment": "A review of the item. Supersedes reviews.",
+      "label": "review"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:CreativeWork"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:previousStartDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
+      "label": "previousStartDate"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:organizer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Person"
+      ],
+      "comment": "An organizer of an Event.",
+      "label": "organizer"
+    },
+    {
+      "id": "schema:superEvent",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Event"
+      ],
+      "comment": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+      "label": "superEvent"
+    },
+    {
+      "id": "schema:recordedIn",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork"
+      ],
+      "comment": "The CreativeWork that captured all or part of this Event. Inverse property: recordedAt.",
+      "label": "recordedIn"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:aggregateRating",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:AggregateRating"
+      ],
+      "comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "label": "aggregateRating"
+    },
+    {
+      "id": "schema:workPerformed",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork"
+      ],
+      "comment": "A work performed in some event, for example a play performed in a TheaterEvent.",
+      "label": "workPerformed"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:performer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person",
+        "schema:Organization"
+      ],
+      "comment": "A performer at the event—for example, a presenter, musician, musical group or actor. Supersedes performers.",
+      "label": "performer"
+    },
+    {
+      "id": "schema:location",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Place",
+        "schema:PostalAddress",
+        "schema:Text"
+      ],
+      "comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "label": "location"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:ImageObject"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:startDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Date"
+      ],
+      "comment": "The start date and time of the item (in ISO 8601 date format).",
+      "label": "startDate"
+    },
+    {
+      "id": "schema:doorTime",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:DateTime"
+      ],
+      "comment": "The time admission will commence.",
+      "label": "doorTime"
+    },
+    {
+      "id": "schema:typicalAgeRange",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The typical expected age range, e.g. '7-9', '11-'.",
+      "label": "typicalAgeRange"
+    },
+    {
+      "id": "schema:duration",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Duration"
+      ],
+      "comment": "The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.",
+      "label": "duration"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:offers",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Offer"
+      ],
+      "comment": "An offer to provide this item—for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "label": "offers"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:inLanguage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:Language"
+      ],
+      "comment": "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard. Supersedes language.",
+      "label": "inLanguage"
+    }
+  ]
+}

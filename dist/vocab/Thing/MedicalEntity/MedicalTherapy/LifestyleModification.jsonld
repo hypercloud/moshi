@@ -1,0 +1,228 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:medicineSystem",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicineSystem"
+      ],
+      "comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "label": "medicineSystem"
+    },
+    {
+      "id": "schema:guideline",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalGuideline"
+      ],
+      "comment": "A medical guideline related to this entity.",
+      "label": "guideline"
+    },
+    {
+      "id": "schema:LifestyleModification",
+      "type": "rdfs:Class",
+      "comment": "A process of care involving exercise, changes to diet, fitness routines, and other lifestyle changes aimed at improving a health condition.",
+      "usesVocabulary": "http://schema.org/",
+      "subClassOf": "LifestyleModification"
+    },
+    {
+      "id": "schema:relevantSpecialty",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalSpecialty"
+      ],
+      "comment": "If applicable, a medical specialty in which this entity is relevant.",
+      "label": "relevantSpecialty"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:adverseOutcome",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalEntity"
+      ],
+      "comment": "A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.",
+      "label": "adverseOutcome"
+    },
+    {
+      "id": "schema:duplicateTherapy",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalTherapy"
+      ],
+      "comment": "A therapy that duplicates or overlaps this one.",
+      "label": "duplicateTherapy"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:code",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalCode"
+      ],
+      "comment": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+      "label": "code"
+    },
+    {
+      "id": "schema:indication",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalIndication"
+      ],
+      "comment": "A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication.",
+      "label": "indication"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:contraindication",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalContraindication"
+      ],
+      "comment": "A contraindication for this therapy.",
+      "label": "contraindication"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ImageObject",
+        "schema:URL"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:recognizingAuthority",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization"
+      ],
+      "comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+      "label": "recognizingAuthority"
+    },
+    {
+      "id": "schema:study",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalStudy"
+      ],
+      "comment": "A medical study or trial related to this entity.",
+      "label": "study"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:CreativeWork",
+        "schema:URL"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:seriousAdverseOutcome",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:MedicalEntity"
+      ],
+      "comment": "A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.",
+      "label": "seriousAdverseOutcome"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    }
+  ]
+}

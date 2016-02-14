@@ -1,0 +1,314 @@
+{
+  "@context": {
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "usesVocabulary": {
+      "@id": "rdfa:usesVocabulary",
+      "@type": "@id"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "subPropertyOf": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@language": "en"
+    },
+    "label": {
+      "@id": "rdfs:label",
+      "@language": "en"
+    },
+    "rangeIncludes": {
+      "@id": "schema:rangeIncludes",
+      "@container": "@set",
+      "@type": "@id"
+    }
+  },
+  "graph": [
+    {
+      "id": "schema:url",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of the item.",
+      "label": "url"
+    },
+    {
+      "id": "schema:broker",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Organization",
+        "schema:Person"
+      ],
+      "comment": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred. Supersedes bookingAgent.",
+      "label": "broker"
+    },
+    {
+      "id": "schema:paymentDueDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:DateTime"
+      ],
+      "comment": "The date that payment is due. Supersedes paymentDue.",
+      "label": "paymentDueDate"
+    },
+    {
+      "id": "schema:discount",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text",
+        "schema:Number"
+      ],
+      "comment": "Any discount applied (to an Order).",
+      "label": "discount"
+    },
+    {
+      "id": "schema:orderStatus",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OrderStatus"
+      ],
+      "comment": "The current status of the order.",
+      "label": "orderStatus"
+    },
+    {
+      "id": "schema:discountCurrency",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The currency (in 3-letter ISO 4217 format) of the discount.",
+      "label": "discountCurrency"
+    },
+    {
+      "id": "schema:isGift",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Boolean"
+      ],
+      "comment": "Was the offer accepted as a gift for someone other than the buyer.",
+      "label": "isGift"
+    },
+    {
+      "id": "schema:confirmationNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A number that confirms the given order or payment has been received.",
+      "label": "confirmationNumber"
+    },
+    {
+      "id": "schema:paymentUrl",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "The URL for sending a payment.",
+      "label": "paymentUrl"
+    },
+    {
+      "id": "schema:Order",
+      "type": "rdfs:Class",
+      "comment": "An order is a confirmation of a transaction (a receipt), which can contain multiple line items, each represented by an Offer that has been accepted by the customer.",
+      "subClassOf": "schema:Intangible",
+      "usesVocabulary": "http://schema.org/"
+    },
+    {
+      "id": "schema:mainEntityOfPage",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:CreativeWork"
+      ],
+      "comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described.\n      \n      See background notes for details.\n       Inverse property: mainEntity.",
+      "label": "mainEntityOfPage"
+    },
+    {
+      "id": "schema:potentialAction",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Action"
+      ],
+      "comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "label": "potentialAction"
+    },
+    {
+      "id": "schema:customer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person",
+        "schema:Organization"
+      ],
+      "comment": "Party placing the order or paying the invoice.",
+      "label": "customer"
+    },
+    {
+      "id": "schema:orderDate",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:DateTime"
+      ],
+      "comment": "Date order was placed.",
+      "label": "orderDate"
+    },
+    {
+      "id": "schema:partOfInvoice",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Invoice"
+      ],
+      "comment": "The order is being paid as part of the referenced Invoice.",
+      "label": "partOfInvoice"
+    },
+    {
+      "id": "schema:name",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The name of the item.",
+      "label": "name"
+    },
+    {
+      "id": "schema:paymentMethodId",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An identifier for the method of payment used (e.g. the last 4 digits of the credit card).",
+      "label": "paymentMethodId"
+    },
+    {
+      "id": "schema:discountCode",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "Code used to redeem a discount.",
+      "label": "discountCode"
+    },
+    {
+      "id": "schema:description",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "A short description of the item.",
+      "label": "description"
+    },
+    {
+      "id": "schema:additionalType",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "label": "additionalType"
+    },
+    {
+      "id": "schema:image",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL",
+        "schema:ImageObject"
+      ],
+      "comment": "An image of the item. This can be a URL or a fully described ImageObject.",
+      "label": "image"
+    },
+    {
+      "id": "schema:seller",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Person",
+        "schema:Organization"
+      ],
+      "comment": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider. Supersedes vendor, merchant.",
+      "label": "seller"
+    },
+    {
+      "id": "schema:paymentMethod",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PaymentMethod"
+      ],
+      "comment": "The name of the credit card or other method of payment for the order.",
+      "label": "paymentMethod"
+    },
+    {
+      "id": "schema:orderNumber",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "The identifier of the transaction.",
+      "label": "orderNumber"
+    },
+    {
+      "id": "schema:orderedItem",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:OrderItem",
+        "schema:Product"
+      ],
+      "comment": "The item ordered.",
+      "label": "orderedItem"
+    },
+    {
+      "id": "schema:acceptedOffer",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Offer"
+      ],
+      "comment": "The offer(s) -- e.g., product, quantity and price combinations -- included in the order.",
+      "label": "acceptedOffer"
+    },
+    {
+      "id": "schema:alternateName",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:Text"
+      ],
+      "comment": "An alias for the item.",
+      "label": "alternateName"
+    },
+    {
+      "id": "schema:orderDelivery",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:ParcelDelivery"
+      ],
+      "comment": "The delivery of the parcel related to this order or order item.",
+      "label": "orderDelivery"
+    },
+    {
+      "id": "schema:sameAs",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:URL"
+      ],
+      "comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Freebase page, or official website.",
+      "label": "sameAs"
+    },
+    {
+      "id": "schema:billingAddress",
+      "type": "rdfs:Property",
+      "rangeIncludes": [
+        "schema:PostalAddress"
+      ],
+      "comment": "The billing address for the order.",
+      "label": "billingAddress"
+    }
+  ]
+}
