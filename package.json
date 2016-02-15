@@ -18,11 +18,22 @@
       "email": "zengliang.he@nodeunify.com"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypercloud/moshi.git"
+  },
   "keywords": [
     "Schema.org",
-    "JSON-LD"
+    "JSON-LD",
+    "RDFa",
+    "Microdata",
+    "Structured-data"
   ],
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hypercloud/moshi/issues"
+  },
+  "homepage": "https://github.com/hypercloud/moshi#readme",
   "dependencies": {},
   "devDependencies": {
     "babel": "^6.3.26",
