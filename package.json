@@ -3,12 +3,26 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "author": {
+    "name": "HyperCloud Studio",
+    "email": "info@nodeunify.com",
+    "url": "www.nodeunify.com"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "contributors": [
+    {
+      "name": "Junxiang Wei",
+      "email": "junxiang.wei@nodeunify.com"
+    },
+    {
+      "name": "Zengliang He",
+      "email": "zengliang.he@nodeunify.com"
+    }
+  ],
+  "keywords": [
+    "Schema.org",
+    "JSON-LD"
+  ],
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "babel": "^6.3.26",
@@ -26,5 +40,8 @@
     "retry": "^0.9.0",
     "run-sequence": "^1.1.5",
     "type-is": "^1.6.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
